@@ -1,0 +1,37 @@
+Concept: A transaction form on BSC network, with available toke
+
+Overall Design:
+  Form component: contains receiving address, amount to send (max button also available),
+  token to send, memo / safety message
+  Confirmation Modal component: contains 6-digit OTP authentication, confirmation message. 
+    If done properly, transaction status modal appears as submitted, else it
+    appears as rejected.
+  Status Component: Shows transaction status, as well as any errors in modal form.
+  Header component: Might as well
+  Account component: Displays just username, and recent transactions.
+    Upon clicking, opens up a modal with full account details there.
+  Account Details component: Contains username, list of tokens and balances
+    as well as linked mobile number. Also has full list of transaction details.
+
+So when opening the form, a fake account should be loaded, with my username and 
+all that. It should have some random tokens and balances, and a place to link 
+mobile number. Then I can proceed to send tokens.
+
+Errors: 
+
+2. No balance. An error message will appear underneath the balance input, and 
+  submit button will be grayed out
+3. Incorrect address type based on network type. Error message appears underneath
+4. Transaction rejected. User closes modal or clicks reject. Status modal appears, 
+  saying it has been rejected.
+5. Incorrect OTP. I think for OTP, just use 111111 or something. Then anything other
+  than that, have Status modal pop up, to say incorrect OTP, transaction cancelled.
+
+TODO:
+
+All:
+Use a nicer font
+
+Transaction Form:
+Fix max amount button
+

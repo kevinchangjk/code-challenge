@@ -1,0 +1,61 @@
+.App {
+  display: flex;
+  justify-content: center;
+  font-family: helvetica;
+  margin: 8rem;
+  margin-top: 5rem;
+}
+
+.FormHeader {
+  margin-bottom: 1.5rem;
+}
+
+.Form {
+  width: 48rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  border-style: ridge;
+  padding: 2rem;
+}
+
+.Transaction {
+  border-style: ridge;
+  background-color: #fafafa;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  z-index: 1;
+}
+
+.FloatingLabel {
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+
+.Account {
+  width: 24rem;
+  background-color: #fafafa;
+  z-index: 0;
+  margin: auto;
+}
+
+.Modal {
+  overflow-wrap: break-word;
+}
+
+.ModalButton {
+  width: 8rem;
+}
+
+.Toast {
+  background-color: #f8f8f8;
+  margin: 3rem;
+  width: 24rem;
+}
+
+.ToastContainer {
+  z-index: 2;
+}
+
+.ToastHeader {
+  background-color: #f8f8f8;
+}
