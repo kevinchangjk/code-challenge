@@ -1,4 +1,4 @@
-const https = require('https');
+const https = require("https");
 
 // abstract out required properties and methods into class Price
 class Price {
@@ -10,7 +10,7 @@ class Price {
     this.timestamp = timestamp;
   }
   toDecimals(amt) {
-    return amt/100;
+    return amt / 100;
   }
   mid() {
     return this.toDecimals((this.buy + this.sell) / 2);
@@ -21,24 +21,25 @@ class Price {
 }
 
 class Datasource {
-
   // function to request data from server
-  async fetchPrices(url) {
+  fetchPrices(url) {
     return new Promise((resolve, reject) => {
       const req = https.get(url, (res) => {
-        let data = '';
-        res.on('data', (d) => {
+        let data = "";
+        res.on("data", (d) => {
           data += d;
         });
-        res.on('end', () => {
-          data = resolve(JSON.parse(data));
+        res.on("end", () => {
+          resolve(JSON.parse(data));
         });
       });
     });
   }
 
   async getPrices() {
-    const response = await this.fetchPrices("https://static.ngnrs.io/test/prices");
+    const response = await this.fetchPrices(
+      "https://static.ngnrs.io/test/prices"
+    );
     const data = response.data.prices;
     // creating array of prices from retrieved data
     const prices = data.map((price) => {
@@ -51,7 +52,7 @@ class Datasource {
       );
       return res;
     });
-    return prices;
+    return await prices;
   }
 }
 

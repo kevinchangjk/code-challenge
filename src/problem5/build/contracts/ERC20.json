@@ -29,7 +29,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity >=0.5.16 < 0.9.0;\npragma experimental ABIEncoderV2;\n\ninterface ERC20 {\n    function balanceOf(address account) external view returns (uint256);\n}\n\n\ncontract Balances {\n    struct Amount {\n        address token;\n        uint256 balance;\n    }\n\n    function getBalances(\n        address walletAddress, \n        address[] memory tokenAddresses\n    ) \n        public view returns (Amount[] memory) \n    {\n        Amount[] memory tokenAmounts;\n        for (uint64 i = 0; i < tokenAddresses.length; i++) {\n            address token = tokenAddresses[i];\n            uint256 balance = ERC20(token).balanceOf(walletAddress);\n            Amount memory tokenAmount = Amount(token, balance);\n            tokenAmounts[i] = tokenAmount; \n        }\n        return tokenAmounts;\n    }\n}\n",
-  "sourcePath": "/Users/kevin/ripples/switcheo-challenge/src/oldproblem5/contracts/Balances.sol",
+  "sourcePath": "/Users/kevin/ripples/projects/switcheo-challenge/src/problem5/contracts/Balances.sol",
   "ast": {
     "absolutePath": "project:/contracts/Balances.sol",
     "exportedSymbols": {
@@ -2072,7 +2072,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-28T03:06:30.420Z",
+  "updatedAt": "2022-03-01T14:59:39.402Z",
   "devdoc": {
     "methods": {}
   },
